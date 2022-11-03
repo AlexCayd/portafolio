@@ -1,0 +1,57 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.grid-contacto {
+    @include m.tablet { 
+        @include m.grid(2, 5rem);
+        align-items: center;
+    }
+}
+
+.campo {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 2px solid #E10D2D;
+
+    label, option, select, input {
+        font-size: 2rem;
+        display: block;
+        padding: .5rem;
+    }
+
+    input, select {
+        width: 100%;
+        margin-top: 1rem;
+
+        @include m.tablet { 
+            width: auto;
+        }
+    }
+}
+
+.boton {
+    padding: 1rem;
+    border: 2px solid #000;
+    background-color: #E10D2D;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contenedor-redes {
+    @include m.grid(3, 0);
+}
+
+.red {
+    align-content: center;
+}
+
+
+.red p {
+    text-align: center;
+    background-color: #E10D2D;
+    
+}

@@ -1,0 +1,57 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 554px; 
+    // width: 554px; 
+    margin: 1rem;
+    border-radius: 6px;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.3);
+    background-color: #E10D2D;
+    overflow: hidden;
+    transition-property: transform;
+    transition-delay: .1s;
+    transition-duration: .5s;
+
+    @include m.tablet { 
+        width: 362px; 
+    }
+}
+
+.card:hover .card-info{
+    background-color: #000;
+}
+
+.card:hover {
+    transform: scale(1.015) rotate(2deg);
+}
+
+.card-info {
+    color: #eee;
+    padding: 1rem 2rem;
+    text-align: center;
+    transition-property: background-color;
+    transition-duration: 300ms;
+
+    h3 {
+        font-size: 2.6rem;
+    }
+}
+
+.card-curso {
+    width: 100%;
+    transform: rotate3d(1, 2, -1, 40deg);
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, .7);
+    margin-top: 5rem;
+    z-index: -1;
+}
+
+.card-curso:hover {
+    transform: scale(0.95) rotate3d(0, 0, 0, 0deg);
+}

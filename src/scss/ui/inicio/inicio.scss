@@ -1,0 +1,87 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-slides {
+    position: absolute;
+    width: 85%;
+    height: 100vh;
+    display: block;
+    flex-direction: column;
+    border: 2px solid #E10D2D;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .contenedor-slides {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.contenedor-slides .slide {
+    position: relative;
+    background-color: #fff;
+    height: 100%;
+    flex: 1;
+    border-left: 1px solid #E10D2D;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+
+.contenedor-slides .slide:last-child {
+    border-right: none;
+}
+
+.contenedor-slides .slide:hover {
+    flex-grow: 3;
+}
+
+.contenedor-slides .slide:nth-child(1) {
+    background-image: url(../img/desarrollo.jpeg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.contenedor-slides .slide:nth-child(2) {
+    background-image: url(../img/redesss.jpeg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.contenedor-slides .slide:nth-child(3) {
+    background-image: url(../img/ecommerce.jpeg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.contenedor-slides .slide .contenido {
+    visibility: visible;
+    position: absolute;
+        bottom: 0;
+        margin: 40px;
+        padding: 30px;
+        border-radius: 20px;
+        background-color: #000;
+        color: #E10D2D;
+    
+    @include m.tablet { 
+        
+        visibility: hidden;
+        opacity: 0;
+        transition: 0s;
+        transform: translateY(100px);
+    }
+}
+
+
+.contenedor-slides .slide .contenido p {
+    color: #fff;
+}
+
+.contenedor-slides .slide:hover .contenido {
+    visibility: visible;
+    opacity: 1;
+    transition: .5s;
+    transition-delay: .5s;
+    transform: translateY(0);
+}
